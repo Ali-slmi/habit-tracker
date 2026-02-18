@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+/* فعال‌سازی dark mode با کلاس (برای toggle دستی) */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* پیکربندی پایه برای ردیاب عادت‌ها - RTL کامل */
+@theme {
+  --font-sans: 'Vazirmatn', 'Tahoma', 'Arial', sans-serif;
+}
+
+@layer base {
+  * {
+    @apply border-gray-200 dark:border-gray-700;
+  }
+  html {
+    direction: rtl;
+  }
+  body {
+    @apply bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-100 min-h-screen;
+  }
+}
+
+/* انیمیشن‌های سفارشی */
+@keyframes scale-in {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes check-bounce {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+.animate-scale-in {
+  animation: scale-in 0.3s ease-out;
+}
+
+.animate-check-bounce {
+  animation: check-bounce 0.4s ease-out;
+}
