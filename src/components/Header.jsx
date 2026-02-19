@@ -60,14 +60,12 @@ export default function Header({
           </div>
         </div>
 
-        {/* آمار */}
+        {/* آمار (بدون longest streak بنا به درخواست کاربر) */}
         {stats && (
           <div className="flex flex-wrap gap-4 mt-4 text-sm text-gray-600 dark:text-gray-400">
             <span>عادت‌های فعال: {toPersianNumber(stats.activeCount)}</span>
             <span>•</span>
             <span>مجموع روزهای موفق: {toPersianNumber(stats.totalCompleted)}</span>
-            <span>•</span>
-            <span>طولانی‌ترین streak: {toPersianNumber(stats.longestStreak)} روز</span>
           </div>
         )}
       </div>
